@@ -1,0 +1,311 @@
+/* Import Historic Font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* General Styles */
+
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #388e3c;
+  --background-color: #f1f1f1;
+  --accent-color: #ff7043;
+  --text-color: #333;
+  --light-text-color: #fafafa;
+  --dark-bg: #2f2f3b;
+  --card-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Cinzel', serif; /* Apply the historic font to the entire body */
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f1f1f1, #dce1e5);
+  color: #333;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #4CAF50;
+  text-align: center;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #ffe3e3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #333;
+}
+
+/* Content Container */
+.contentContainer {
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.navItem {
+  background-color: #ffd1d1;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navItem:hover,
+.navItem.activeNavItem {
+  background-color: #ffeeac;
+}
+
+.logoutButton {
+  background: linear-gradient(135deg, #ff7043, #ffab91);
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.logoutButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 94, 94, 0.4);
+}
+
+/* Event List */
+.eventList {
+  list-style: none;
+  padding: 0;
+}
+
+.eventItem {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.eventItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.s ease;
+  pointer-events: none;
+}
+
+.eventItem:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--light-text-color);
+}
+
+.eventItem:hover::before {
+  opacity: 1;
+}
+
+/* Form container */
+.formContainer {
+  background-color: #f2b893;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+.formContainer h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup input {
+  padding: 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #333;
+  transition: border-color 0.2s;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Buttons */
+.button {
+  background-color: #8a9f89;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #7a8f79;
+}
+
+.toggle {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: #0056b3;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.toggleButton:hover {
+  color: #003d80;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contentContainer {
+    max-width: 90%;
+  }
+
+  .formContainer {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 15px;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+/* Container for Form and Image in a Row */
+.formImageRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+/* Form Container */
+.formContainer {
+  flex: 1 1 40%; /* 40% width, grows/shrinks responsively */
+  max-width: 400px;
+}
+
+/* Image Section */
+.imageSection {
+  flex: 1 1 40%; /* 40% width, grows/shrinks responsively */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.imageSection .image {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.imageSection p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+@media (max-width: 768px) {
+  .formImageRow {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
